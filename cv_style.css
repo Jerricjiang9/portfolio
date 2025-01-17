@@ -7,7 +7,7 @@ body {
     padding: 0;
 }
 
-/* Header styles */
+
 header {
     text-align: center;
     background-color: #333;
@@ -25,7 +25,7 @@ header p {
     font-size: 1.2rem;
 }
 
-/* Main content styles */
+
 main {
     max-width: 800px;
     margin: 2rem auto;
@@ -70,7 +70,7 @@ article time {
     margin-bottom: 1rem;
 }
 
-/* Navigation styles */
+
 nav {
     background-color: #333;
     color: white;
