@@ -3,4 +3,143 @@ body {
          and use the OS’s UI font as the website font
        */
     font: 100%/1.5 system-ui;
+    max-width: 100ch; /* Restricts content width for readability */
+    margin-inline: auto; /* Centers the content horizontally */
+    padding: 1rem; /* Adds padding around the content */
+    font-family: system-ui, sans-serif;
   }
+/* Navigation bar styling */
+nav {
+  background-color: #333; /* Dark background color */
+  padding: 0.5rem; /* Space around the navigation bar */
+}
+
+nav ul {
+  list-style: none; /* Remove bullet points from the list */
+  display: flex; /* Arrange items horizontally */
+  justify-content: center; /* Center the navigation items */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+}
+
+nav li {
+  margin: 0 1rem; /* Add spacing between links */
+}
+
+nav a {
+  text-decoration: none; /* Remove underlines from links */
+  color: white; /* White text color */
+  font-weight: bold; /* Bold text for links */
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+nav a:hover {
+  color: #00bcd4; /* Change link color on hover */
+}
+
+form {
+  max-width: 600px; /* Limits the width of the form */
+  margin: 2rem auto; /* Centers the form and adds vertical spacing */
+  padding: 1rem; /* Adds space inside the form */
+  border: 1px solid #ccc; /* Adds a light border */
+  border-radius: 8px; /* Rounds the corners */
+  background-color: #f9f9f9; /* Light background color */
+}
+
+/* Styling for form groups */
+.form-group {
+  margin-bottom: 1rem; /* Adds spacing between form fields */
+}
+
+/* Styling for labels */
+label {
+  display: block; /* Forces labels to appear on their own line */
+  font-weight: bold; /* Makes labels bold */
+  margin-bottom: 0.5rem; /* Adds space below labels */
+}
+
+/* Styling for input and textarea */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%; /* Makes inputs and textarea take full width */
+  padding: 0.5rem; /* Adds padding inside the fields */
+  border: 1px solid #ccc; /* Adds a light border */
+  border-radius: 4px; /* Rounds the corners */
+  font-size: 1rem; /* Ensures readable font size */
+  box-sizing: border-box; /* Prevents padding from affecting total width */
+}
+
+/* Button styling */
+button {
+  display: block; /* Makes the button a block element */
+  width: 100%; /* Makes the button span the full width of the form */
+  padding: 0.75rem; /* Adds padding inside the button */
+  background-color: #333; /* Dark background color */
+  color: white; /* White text color */
+  font-size: 1rem; /* Ensures readable font size */
+  border: none; /* Removes default border */
+  border-radius: 4px; /* Rounds the corners */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  transition: background-color 0.3s; /* Adds a smooth hover transition */
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #00bcd4; /* Changes button color on hover */
+}
+
+.projects {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 1.5rem; /* Add space between grid items */
+  margin: 2rem auto; /* Center the grid and add vertical spacing */
+  max-width: 1200px; /* Restrict maximum width */
+  padding: 1rem; /* Add padding around the grid */
+}
+
+/* Individual project items */
+.project-item {
+  background-color: #f9f9f9; /* Light background color */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 1rem; /* Space inside each item */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Project item hover effect */
+.project-item:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Project titles */
+.project-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Project descriptions */
+.project-item p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #555; /* Slightly darker text color for readability */
+}
+
+/* Project links */
+.project-item a {
+  display: inline-block; /* Makes the link a button-like element */
+  padding: 0.5rem 1rem; /* Add padding around the link */
+  background-color: #333; /* Dark background color */
+  color: white; /* White text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 4px; /* Round the corners */
+  font-weight: bold;
+  transition: background-color 0.3s; /* Smooth hover transition */
+}
+
+/* Hover effect for project links */
+.project-item a:hover {
+  background-color: #00bcd4; /* Change background color on hover */
+}
