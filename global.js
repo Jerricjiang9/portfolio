@@ -46,3 +46,47 @@ themeSwitcher.addEventListener('change', (e) => {
 });
 
 document.body.prepend(themeSwitcher);
+
+export async function fetchJSON(url) {
+  try {
+      const response = await fetch(url); // Fetch JSON file
+      console.log(response); // Log the response to verify it works
+
+      if (!response.ok) {
+          throw new Error(`Failed to fetch data: ${response.statusText}`);
+      }
+
+      return await response.json(); // Parse and return JSON data
+  } catch (error) {
+      console.error("Error fetching JSON data:", error);
+      return null; // Return null if an error occurs
+  }
+}
+
+export function renderProjects(projects, container) {
+  console.log("🔄 Running renderProjects function...");
+
+  container.innerHTML = ''; // Clear any existing content
+
+  projects.forEach(project => {
+      console.log(`📌 Rendering project: ${project.title}`); // Debugging log
+
+      const article = document.createElement('article');
+      article.classList.add('project-item');
+
+      article.innerHTML = `
+          <h2>${project.title}</h2>
+          <img src="${project.image}" alt="${project.title}">
+          <p>${project.description}</p>
+          <a href="${project.link}" target="_blank">View Project</a>
+      `;
+
+      container.appendChild(article);
+  });
+
+  console.log("✅ All projects rendered successfully!");
+}
+
+export async function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${username}`);
+}
