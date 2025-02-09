@@ -49,37 +49,40 @@ document.body.prepend(themeSwitcher);
 
 export async function fetchJSON(url) {
   try {
-      const response = await fetch(url); // Fetch JSON file
-      console.log(response); // Log the response to verify it works
+      const response = await fetch(url); 
+      console.log(response); 
 
       if (!response.ok) {
           throw new Error(`Failed to fetch data: ${response.statusText}`);
       }
 
-      return await response.json(); // Parse and return JSON data
+      return await response.json(); 
   } catch (error) {
       console.error("Error fetching JSON data:", error);
-      return null; // Return null if an error occurs
+      return null; 
   }
 }
 
 export function renderProjects(projects, container) {
   console.log("🔄 Running renderProjects function...");
 
-  container.innerHTML = ''; // Clear any existing content
+  container.innerHTML = ''; 
 
   projects.forEach(project => {
-      console.log(`📌 Rendering project: ${project.title}`); // Debugging log
+      console.log(`📌 Rendering project: ${project.title}`); 
 
       const article = document.createElement('article');
       article.classList.add('project-item');
 
       article.innerHTML = `
-          <h2>${project.title}</h2>
-          <img src="${project.image}" alt="${project.title}">
-          <p>${project.description}</p>
-          <a href="${project.link}" target="_blank">View Project</a>
-      `;
+            <h2>${project.title}</h2>
+            <img src="${project.image}" alt="${project.title}">
+            <div class="project-info">
+                <p>${project.description}</p>
+                <p class="project-year"><em>c. ${project.year}</em></p>
+            </div>
+            <a href="${project.link}" target="_blank">View Project</a>
+        `;
 
       container.appendChild(article);
   });
